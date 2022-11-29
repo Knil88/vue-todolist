@@ -18,39 +18,41 @@
         <header>
 
             <h1>
-                ToDoList
+                <i class="fa-solid fa-list-ol"></i>   ToDoList
             </h1>
 
         </header>
         <main >
-           <section>
-            <form action="">
-                <input type="text" placeholder="Inserisci Task" v-model="newTasks" @KeyUp.enter="addTask">
-                <div>
-                    <div id="button" @click="addTask">
+                <section>
+               
+                   <form id="inputcontainer" action="">
+                    <input type="text" placeholder="Inserisci Task" v-model="newTasks" @KeyUp.enter="addTask">
+                    <button @click="addTask"> 
                         Aggiungi Task
-                    </div>
-                </div>
+                    </button>
+                   </form>
+                       
+              
                <div v-if="error">
                 <small >
-                    devi inserire almeno 5 caratteri
+                    Devi inserire almeno 5 caratteri
                 </small>
                </div>
-            </form>
-            <ul>
-                <li v-for="task in tasks">
+            
+            <ul v-if="tasks.length > 0 ">
+                <li v-for="(task , index) in tasks" >
                     {{task.text}}
-                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-solid fa-xmark"@click="deleteTask(index)"></i>
                 </li>
             </ul>
-            
+            <h3 v-else>
+                Non ci sono altre task
+            </h3>
            </section>
-           <section>
-            
-           </section>
+         
         </main>
        </div>
-        
+       
 
     </div>
 

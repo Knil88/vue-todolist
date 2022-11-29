@@ -4,24 +4,26 @@
 }
 body{
     font-family: sans-serif;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3hNUfm0LQnPb9xWSoNZO4zFsdTUDbUksVvg&usqp=CAU);
+    background-size: cover;
 }
 h1{
     text-align: center;
     padding: 20px;
 }
+header,h3{
+    color: white;
+}
 main {
     background-color: rgba(0, 0, 0, 0.5);
-    max-width: 255px;
+    max-width: 300px;
     margin: auto;
     padding: 20px;
     display: flex;
     justify-content: center;
     border-radius: 20px;
-  }form div{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
   }
+  
   input {
     padding: 5px;
     font-size: 15px;
@@ -29,6 +31,11 @@ main {
     border-radius: 11px;
     }
   
+    #inputcontainer{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
 small{
     color: red;
     background-color: aqua;
@@ -37,13 +44,17 @@ small{
 ul{
     list-style: none;
 }
-#button {
+i{
+    cursor: pointer;
+}
+button {
     background-color: antiquewhite;
     padding: 5px;
     font-size: 15px;
     border-radius: 13px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 15px;
   }
 li {
     background-color: antiquewhite;
