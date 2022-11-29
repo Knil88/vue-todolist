@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="flex jusify-center">
+
+    <div id="app">
+       <div id="container">
+        <header>
+
+            <h1>
+                ToDoList
+            </h1>
+
+        </header>
+        <main >
+           <section>
+            <form action="">
+                <input type="text" placeholder="Inserisci Task" v-model="newTasks" @KeyUp.enter="addTask">
+                <div>
+                    <div id="button" @click="addTask">
+                        Aggiungi Task
+                    </div>
+                </div>
+               <div v-if="error">
+                <small >
+                    devi inserire almeno 5 caratteri
+                </small>
+               </div>
+            </form>
+            <ul>
+                <li v-for="task in tasks">
+                    {{task.text}}
+                    <i class="fa-solid fa-xmark"></i>
+                </li>
+            </ul>
+            
+           </section>
+           <section>
+            
+           </section>
+        </main>
+       </div>
+        
+
+    </div>
+
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
