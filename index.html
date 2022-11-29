@@ -40,7 +40,7 @@
                </div>
             
             <ul v-if="tasks.length > 0 ">
-                <li v-for="(task , index) in tasks" >
+                <li v-for="(task , index) in tasks" :class="task.done ? 'completed': ''" >
                     {{task.text}}
                     <i class="fa-solid fa-xmark"@click="deleteTask(index)"></i>
                 </li>
